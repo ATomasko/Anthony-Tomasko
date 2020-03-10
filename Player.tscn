@@ -49,7 +49,13 @@ func _process(delta):
 func _on_Player_entered(body):
 	hide()  
 	emit_signal(\"hit\")
-	$CollisionShape2D.set_deferred(\"disabled\",true)"
+	$CollisionShape2D.set_deferred(\"disabled\",true)
+
+func starts(pos):
+	position = pos
+	show()
+	$CollisionShape2D.disabled = false
+	"
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
